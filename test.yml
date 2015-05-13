@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    Trole_name: mytestrole
-    Trole_dest: /home/vagrant
+    newrole_name: mytestrole
+    newrole_dest: /home/vagrant
   roles:
-    - role: Trole
+    - role: newrole

@@ -1,5 +1,5 @@
 ---
 # defaults file for Trole
 
-Trole_name: 'myrole'
-Trole_dest: './'
+newrole_name: 'myrole'
+newrole_dest: './'
