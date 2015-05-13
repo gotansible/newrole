@@ -1,12 +1,14 @@
 newrole
 =========
 
+[![Build Status](https://travis-ci.org/gotansible/newrole.svg)](https://travis-ci.org/gotansible/newrole)
+
 Creates a scaffolding for a new ansible role. It was created because the one that comes with Ansible (ansible-galaxy) leaves something to be desired.
 
 Requirements
 ------------
 
-*nix		
+*nix OS - Debian, Ubuntu, CentOS, RedHat, Amazon Linux, etc..		
 
 Role Variables
 --------------
@@ -19,18 +21,21 @@ Dependencies
 
 None
 
-
 Setup
 ----------------
 
 **Step 1**
 Get the newrole folder onto your computer.
 
+```bash
 ansible-galaxy install gotansible.newrole 
+```
 
 or
 
+```bash
 ansible-galaxy install gotansible.newrole -p ~/src/pick_a_folder_to_put_it_in
+```
 
 **Step 2**
 Make it easy to run newrole.
