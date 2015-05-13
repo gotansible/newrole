@@ -1,0 +1,7 @@
+---
+- hosts: all
+  vars:
+    Trole_name: mytestrole
+    Trole_dest: /home/vagrant
+  roles:
+    - role: Trole

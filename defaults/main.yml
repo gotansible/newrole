@@ -1,0 +1,5 @@
+---
+# defaults file for Trole
+
+Trole_name: 'myrole'
+Trole_dest: './{{ Trole_name }}'

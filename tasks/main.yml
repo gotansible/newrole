@@ -1,0 +1,70 @@
+---
+# tasks file for Trole
+- name: destination folder
+  file:
+    state=directory
+    path={{ Trole_dest }}/{{ Trole_name }}
+
+- name: create folders
+  file:
+    state=directory
+    path={{ Trole_dest }}/{{ Trole_name }}/{{ item }}
+  with_items:
+    - defaults
+    - files
+    - handlers
+    - meta
+    - tasks
+    - templates
+
+- name: create main.yml files
+  file:
+    state=touch
+    path={{ Trole_dest }}/{{ Trole_name }}/{{ item }}
+  with_items:
+    - defaults/main.yml
+    - handlers/main.yml
+    - meta/main.yml
+    - tasks/config.yml
+    - tasks/depend.yml
+    - tasks/install_debian.yml
+    - tasks/service.yml
+
+- name: create ansible.cfg and bumpversion
+  copy:
+    src={{ item }}
+    dest={{ Trole_dest }}/{{ Trole_name }}/{{ item }}
+  with_items:
+    - ansible.cfg
+    - bumpversion
+
+- name: make bumpversion executable
+  file:
+    path={{ Trole_dest }}/{{ Trole_name }}/bumpversion
+    mode=0755
+
+- name: create hidden files .travis.yml and .bumpversion.cfg
+  copy:
+    src={{ item }}
+    dest={{ Trole_dest }}/{{ Trole_name }}/.{{ item }}
+  with_items:
+    - travis.yml
+    - bumpversion.cfg
+
+- name: Vagrantfile and test.yml
+  template:
+    src={{item}}.j2
+    dest={{ Trole_dest }}/{{ Trole_name }}/{{ item }}
+  with_items:
+    - Vagrantfile
+    - test.yml
+
+- name: tasks/main.yml
+  copy:
+    src={{item}}
+    dest={{ Trole_dest }}/{{ Trole_name }}/tasks/{{ item }}
+  with_items:
+    - tasks_main.yml
+
+
+
