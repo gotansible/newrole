@@ -2,6 +2,7 @@ newrole
 =========
 
 [![Build Status](https://travis-ci.org/gotansible/newrole.svg)](https://travis-ci.org/gotansible/newrole)
+[![Ansible Galaxy](http://img.shields.io/badge/galaxy-runit-blue.svg?style=flat)](https://galaxy.ansible.com/list#/roles/3780)
 
 Creates a scaffolding for a new ansible role. It was created because the one that comes with Ansible (ansible-galaxy) leaves something to be desired.
 
