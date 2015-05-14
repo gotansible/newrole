@@ -78,10 +78,8 @@
 
 - name: tasks/main.yml
   copy:
-    src={{item}}
-    dest={{ newrole_dest }}/{{ newrole_name }}/tasks/{{ item }}
-  with_items:
-    - tasks_main.yml
+    src=tasks_main.yml
+    dest={{ newrole_dest }}/{{ newrole_name }}/tasks/main.yml
 
 
 
