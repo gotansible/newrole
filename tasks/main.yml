@@ -46,14 +46,14 @@
     src=meta_main.yml.j2
     dest={{ newrole_dest }}/{{ newrole_name }}/meta/main.yml
 
-
-- name: create ansible.cfg and bumpversion
+- name: ansible.cfg, bumpversion, README.md
   copy:
     src={{ item }}
     dest={{ newrole_dest }}/{{ newrole_name }}/{{ item }}
   with_items:
     - ansible.cfg
     - bumpversion
+    - README.md
 
 - name: make bumpversion executable
   file:
