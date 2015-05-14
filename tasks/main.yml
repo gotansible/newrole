@@ -1,4 +1,14 @@
 ---
+
+- name: check if destination already exists 
+  stat: path={{ newrole_dest }}/{{ newrole_name }}
+  register: already_exists
+  changed_when: false
+
+- name: fail - destination already exists!!
+  fail: msg=Looks like the destination already exists!!! We don't want to overwrite you existing code, so we're going to fail instead. Please check the destination {{ newrole_dest }}/{{ newrole_name }}
+  when: already_exists.stat.exists
+
 # tasks file for newrole
 - name: destination folder
   file:

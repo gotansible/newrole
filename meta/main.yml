@@ -2,7 +2,7 @@
 dependencies: []
 galaxy_info:
   author: Franklin Wise
-  description: Create an ansible scaffold for creating a new role
+  description: Create an ansible scaffold for a new role
   company: 
   license: MIT
   min_ansible_version: 1.2
