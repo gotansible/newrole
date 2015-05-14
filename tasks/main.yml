@@ -46,14 +46,13 @@
     src=meta_main.yml.j2
     dest={{ newrole_dest }}/{{ newrole_name }}/meta/main.yml
 
-- name: ansible.cfg, bumpversion, README.md
+- name: ansible.cfg and bumpversion
   copy:
     src={{ item }}
     dest={{ newrole_dest }}/{{ newrole_name }}/{{ item }}
   with_items:
     - ansible.cfg
     - bumpversion
-    - README.md
 
 - name: make bumpversion executable
   file:
@@ -68,13 +67,14 @@
     - travis.yml
     - bumpversion.cfg
 
-- name: Vagrantfile and test.yml
+- name: Vagrantfile, test.yml and README.md
   template:
     src={{item}}.j2
     dest={{ newrole_dest }}/{{ newrole_name }}/{{ item }}
   with_items:
     - Vagrantfile
     - test.yml
+    - README.md
 
 - name: tasks/main.yml
   copy:
