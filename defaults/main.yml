@@ -3,3 +3,4 @@
 
 newrole_name: 'myrole'
 newrole_dest: './'
+newrole_force: false #overrite if already exists
