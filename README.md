@@ -42,13 +42,13 @@ ansible-galaxy install gotansible.newrole -p ~/src/pick_a_folder_to_put_it_in
 Make it easy to run newrole.
 
 ```bash
-echo "alias newrole='/etc/ansible/roles/newrole/newrole'" > ~/.profile
+echo "alias newrole='/etc/ansible/roles/gotansible.newrole/newrole'" > ~/.profile
 source ~/.profile
 ```
 or (if you picked a specific folder)
 
 ```bash
-echo "alias newrole='/path/to/the/folder/in/step/1/newrole/newrole'" > ~/.profile
+echo "alias newrole='/path/to/the/folder/in/step/1/gotansible.newrole/newrole'" > ~/.profile
 source ~/.profile
 ```
 
