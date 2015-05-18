@@ -75,7 +75,8 @@
     - Vagrantfile
     - test.yml
     - README.md
-
+    - LICENSE
+    
 - name: tasks/main.yml
   copy:
     src=tasks_main.yml
