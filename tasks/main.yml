@@ -76,6 +76,7 @@
     - test.yml
     - README.md
     - LICENSE
+    - requirements.yml
     
 - name: tasks/main.yml
   copy:
