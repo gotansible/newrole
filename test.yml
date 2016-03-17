@@ -1,8 +1,7 @@
 ---
 - hosts: all
-  vars:
-    newrole_name: mytestrole
-    newrole_dest: /home/vagrant
-    newrole_force: true
   roles:
     - role: newrole
+      newrole_name: mytestrole
+      newrole_dest: /home/vagrant
+      newrole_force: true

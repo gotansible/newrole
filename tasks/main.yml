@@ -54,6 +54,14 @@
     - ansible.cfg
     - bumpversion
 
+- name: private files gitignore
+  copy:
+    src={{ item }}
+    dest={{ newrole_dest }}/{{ newrole_name }}/.{{ item }}
+  with_items:
+    - gitignore
+
+
 - name: make bumpversion executable
   file:
     path={{ newrole_dest }}/{{ newrole_name }}/bumpversion
