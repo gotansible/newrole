@@ -3,9 +3,8 @@
 - name: dependencies
   include: depend.yml
 
-- name: debian install
-  include: install_debian.yml
-  when: ansible_os_family == 'Debian'
+- name: install
+  include: install.yml
 
 - name: configure
   include: config.yml

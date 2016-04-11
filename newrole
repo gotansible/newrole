@@ -19,4 +19,4 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 echo "creating new role $1 at $(pwd)/$1"
-ansible-playbook "$DIR/run.yml" -i $DIR/inventory -c local -e "newrole_dest=$(pwd) newrole_name=$1"
+ansible-playbook "$DIR/run.yml" -i $DIR/inv-localhost -c local -e "newrole_dest=$(pwd) newrole_name=$1"
