@@ -37,7 +37,7 @@
     - handlers/main.yml
     - tasks/config.yml
     - tasks/depend.yml
-    - tasks/install_debian.yml
+    - tasks/install.yml
     - tasks/service.yml
   changed_when: False
 
@@ -60,7 +60,6 @@
     dest={{ newrole_dest }}/{{ newrole_name }}/.{{ item }}
   with_items:
     - gitignore
-
 
 - name: make bumpversion executable
   file:
