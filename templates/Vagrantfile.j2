@@ -11,7 +11,8 @@ system("
 VAGRANT_VERSION = 2
 Vagrant.configure(VAGRANT_VERSION) do |config|
 	config.vm.define "{{ newrole_name }}" do |server|
-		server.vm.box = "hashicorp/precise64"
+		server.vm.box = "ubuntu/trusty64"
+		#server.vm.box = "hashicorp/precise64"
 		server.vm.hostname = "{{ newrole_name }}"
 		server.vm.provision :ansible do |ansible|
 			ansible.playbook = "test.yml"
